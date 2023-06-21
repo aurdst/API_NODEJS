@@ -65,7 +65,7 @@ const router = {
         }
         
         // PUT: /api/blogs/:id
-        if (req.url.match(/\/api\/blogs\/[0-9]\//) && req.method === "PUT") {
+        if (req.url.match(/\/api\/blogs\/[0-9]+/) && req.method === "PUT") {
             try {
                 //extract id from url
                 const id = req.url.split("/")[3];
@@ -74,16 +74,25 @@ const router = {
                 req.on("data", (chunk) => {
                     body += chunk.toString();
                 })
+
+                console.log("try pass here");
                 
                 req.on("end", async() => {
-                    // Find and update document
-                    let updateBlog = Blog.findByIdAndUpdate(id, JSON.parse(body), {
-                        new: true,
-                    })
+                    try {
+                        // Find and update document
+                        let updateBlog = await Blog.findByIdAndUpdate(id, JSON.parse(body), {
+                            new: true,
+                        });
+
+                        console.log(updateBlog);
+
+                        res.writeHead(200, {"Content-Type": "application/json" });
+                        res.end(JSON.stringify(updateBlog));
+                    } catch (error) {
+                        console.log(error);
+                    }
                 });
                 
-                res.writeHead(200, {"Content-Type": "application/json" });
-                res.end(JSON.stringify(updateBlog));
             } catch (error) {
                 console.log(error);
             }
