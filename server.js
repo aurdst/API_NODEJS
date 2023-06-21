@@ -6,7 +6,7 @@ const server = http.createServer((req, res) => {
     router(req, res);
 })
 
-mongoose.connect("mongodb://localhost:27017/your-database-name");
+mongoose.connect("mongodb://localhost:27017/test");
 
 mongoose.connection.on("connected", () => {
     console.log("Connexion à la base de données établie");

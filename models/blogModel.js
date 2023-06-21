@@ -1,6 +1,6 @@
-const mongosse = require("moongosse");
+const mongoose = require("mongoose");
 
-const blogSchema = mongosse.Schema({
+const blogSchema = mongoose.Schema({
     title: {
         type: String,
         required: [true, "Blog must have a title"],
@@ -12,4 +12,4 @@ const blogSchema = mongosse.Schema({
     },
 }); 
 
-module.exports = mongosse.model("Blog", blogSchema);
+module.exports = mongoose.model("Blog", blogSchema);
