@@ -18,7 +18,7 @@ const router = {
         
         // GET: /api/blogs/:id
         // Here i use REGEX expression for check the format URL
-        if (req.url.match(/\/api\/blogs\/[0-9]+)/) && req.method === "GET") {
+        if (req.url.match(/\/api\/blogs\/([0-9]+)/) && req.method === "GET") {
             try {
                 //extract id from url
                 console.log(req.url);
