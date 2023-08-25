@@ -10,6 +10,11 @@ const blogSchema = mongoose.Schema({
         type: String,
         required: [true, "Blog must have a body"],
     },
+
+    date: {
+        type: Date,
+        required: [true, "Blog must have a body"],  
+    },
 }); 
 
 module.exports = mongoose.model("Blog", blogSchema);

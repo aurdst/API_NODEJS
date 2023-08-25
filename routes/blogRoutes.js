@@ -34,9 +34,28 @@ router.get('/api/blogs/:id', async (req, res) => {
 // POST: /api/blogs
 router.post('/api/blogs', async (req, res) => {
   try {
-    const blog = new Blog(req.body);
-    await blog.save();
-    res.status(200).json(blog);
+    // Obtenez la date actuelle au format ISO 8601
+    const currentDate = new Date().toISOString();
+
+    // Créez un nouvel objet Blog avec les données de la requête et la date de création
+    const newBlog = new Blog({
+      title: req.body.title,
+      body: req.body.body,
+      date: currentDate,
+    });
+
+    // Enregistrez le nouveau blog dans la base de données
+    await newBlog.save();
+
+    // Inclure la date dans la réponse JSON
+    const blogWithDate = {
+      _id: newBlog._id,
+      title: newBlog.title,
+      body: newBlog.body,
+      date: newBlog.date,
+    };
+
+    res.status(201).json(blogWithDate); // Retournez le nouveau blog créé
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

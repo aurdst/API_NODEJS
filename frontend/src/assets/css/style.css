@@ -1,0 +1,31 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    padding: 20px;
+    color: white;
+  }
+  
+  .App-header h1 {
+    font-size: 24px;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  .App-footer {
+    background-color: #282c34;
+    padding: 10px;
+    color: white;
+    font-size: 12px;
+  }
+  
+  .App-footer p {
+    margin: 0;
+  }
+  
+  /* Ajoute d'autres styles CSS selon tes besoins */
+  
