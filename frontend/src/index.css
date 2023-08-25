@@ -1,3 +1,4 @@
+/* Réinitialisation des styles de base */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -12,10 +13,10 @@ code {
     monospace;
 }
 
-
+/* Styles pour le formulaire */
 form {
   max-width: 400px;
-  margin:5% auto;
+  margin: 5% auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -62,37 +63,48 @@ button[type="submit"]:hover {
   background-color: darkgreen;
 }
 
-/* SCROLLBOX */
-
-/* Créez une classe pour votre conteneur de liste */
+/* Styles pour la liste de blogs */
 .blog-list-container {
-  max-height: 300px; /* Ajustez la hauteur maximale selon vos besoins */
-  overflow-y: scroll; /* Ajoutez un défilement vertical si la liste dépasse la hauteur maximale */
-  border: 1px solid #ccc; /* Ajoutez une bordure pour délimiter la liste */
-  padding: 10px; /* Ajoutez un peu de marge intérieure pour l'apparence */
+  max-height: 300px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  padding: 10px;
 }
 
-/* Style pour chaque élément de la liste de blogs */
 .blog-item {
-  margin-bottom: 20px; /* Espacement entre les éléments de la liste */
-  padding: 10px; /* Espacement intérieur pour l'apparence */
-  border: 1px solid #ddd; /* Bordure autour de chaque élément de la liste */
-  background-color: #f9f9f9; /* Couleur de fond pour les éléments de la liste */
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
 }
 
-/* Style pour le titre du blog */
 .blog-title {
-  font-size: 18px; /* Taille de la police pour le titre */
-  font-weight: bold; /* Texte en gras pour le titre */
+  font-size: 18px;
+  font-weight: bold;
 }
 
-/* Style pour le corps du blog */
 .blog-body {
-  font-size: 14px; /* Taille de la police pour le corps */
+  font-size: 14px;
 }
 
-/* Style pour les dates */
 .blog-date {
-  font-size: 12px; /* Taille de la police pour les dates */
-  color: #888; /* Couleur du texte des dates */
+  font-size: 12px;
+  color: #888;
+}
+
+/* Styles pour le bouton de tri */
+.sort-button {
+  margin:5px 20px;
+  padding: 10px 20px;
+  background-color: green;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sort-button:hover {
+  background-color: darkgreen;
 }

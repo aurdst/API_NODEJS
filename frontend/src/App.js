@@ -10,6 +10,7 @@ const App = () => {
       .then((response) => response.json())
       .then((data) => {
         setBlogs(data);
+        console.log(data)
       })
       .catch((error) => {
         console.error("Une erreur s'est produite lors de la récupération des données");
@@ -25,7 +26,7 @@ const App = () => {
       body: JSON.stringify(newBlog),
     })
     .then((response) => {
-      response.json();
+     return response.json();
     })
     .then((data) => {
       console.log('test');
